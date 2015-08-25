@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		E495DD961B8CE17C00025CFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495DD951B8CE17C00025CFF /* AppDelegate.swift */; };
-		E495DD981B8CE17C00025CFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495DD971B8CE17C00025CFF /* ViewController.swift */; };
 		E495DD9B1B8CE17C00025CFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E495DD991B8CE17C00025CFF /* Main.storyboard */; };
 		E495DD9D1B8CE17C00025CFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E495DD9C1B8CE17C00025CFF /* Assets.xcassets */; };
 		E495DDA01B8CE17C00025CFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E495DD9E1B8CE17C00025CFF /* LaunchScreen.storyboard */; };
 		E495DDAB1B8CE17C00025CFF /* CalculatorBrainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495DDAA1B8CE17C00025CFF /* CalculatorBrainTests.swift */; };
 		E495DDB61B8CE17C00025CFF /* CalculatorBrainUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495DDB51B8CE17C00025CFF /* CalculatorBrainUITests.swift */; };
+		E495DDC41B8CE22C00025CFF /* AxesDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495DDC31B8CE22C00025CFF /* AxesDrawer.swift */; settings = {ASSET_TAGS = (); }; };
+		E495DDCA1B8CE23C00025CFF /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495DDC61B8CE23C00025CFF /* CalculatorBrain.swift */; settings = {ASSET_TAGS = (); }; };
+		E495DDCB1B8CE23C00025CFF /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495DDC71B8CE23C00025CFF /* CalculatorViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E495DDCC1B8CE23C00025CFF /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495DDC81B8CE23C00025CFF /* GraphView.swift */; settings = {ASSET_TAGS = (); }; };
+		E495DDCD1B8CE23C00025CFF /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495DDC91B8CE23C00025CFF /* GraphViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,6 @@
 /* Begin PBXFileReference section */
 		E495DD921B8CE17C00025CFF /* CalculatorBrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalculatorBrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E495DD951B8CE17C00025CFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E495DD971B8CE17C00025CFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E495DD9A1B8CE17C00025CFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E495DD9C1B8CE17C00025CFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E495DD9F1B8CE17C00025CFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +50,12 @@
 		E495DDB11B8CE17C00025CFF /* CalculatorBrainUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorBrainUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E495DDB51B8CE17C00025CFF /* CalculatorBrainUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorBrainUITests.swift; sourceTree = "<group>"; };
 		E495DDB71B8CE17C00025CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E495DDC31B8CE22C00025CFF /* AxesDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxesDrawer.swift; sourceTree = "<group>"; };
+		E495DDC51B8CE23C00025CFF /* Calculator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Calculator.playground; sourceTree = "<group>"; };
+		E495DDC61B8CE23C00025CFF /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
+		E495DDC71B8CE23C00025CFF /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		E495DDC81B8CE23C00025CFF /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		E495DDC91B8CE23C00025CFF /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +106,14 @@
 		E495DD941B8CE17C00025CFF /* CalculatorBrain */ = {
 			isa = PBXGroup;
 			children = (
-				E495DD951B8CE17C00025CFF /* AppDelegate.swift */,
-				E495DD971B8CE17C00025CFF /* ViewController.swift */,
 				E495DD991B8CE17C00025CFF /* Main.storyboard */,
+				E495DDC51B8CE23C00025CFF /* Calculator.playground */,
+				E495DDC61B8CE23C00025CFF /* CalculatorBrain.swift */,
+				E495DDC71B8CE23C00025CFF /* CalculatorViewController.swift */,
+				E495DDC81B8CE23C00025CFF /* GraphView.swift */,
+				E495DDC91B8CE23C00025CFF /* GraphViewController.swift */,
+				E495DDC31B8CE22C00025CFF /* AxesDrawer.swift */,
+				E495DD951B8CE17C00025CFF /* AppDelegate.swift */,
 				E495DD9C1B8CE17C00025CFF /* Assets.xcassets */,
 				E495DD9E1B8CE17C00025CFF /* LaunchScreen.storyboard */,
 				E495DDA11B8CE17C00025CFF /* Info.plist */,
@@ -255,8 +269,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E495DD981B8CE17C00025CFF /* ViewController.swift in Sources */,
+				E495DDCC1B8CE23C00025CFF /* GraphView.swift in Sources */,
+				E495DDCA1B8CE23C00025CFF /* CalculatorBrain.swift in Sources */,
 				E495DD961B8CE17C00025CFF /* AppDelegate.swift in Sources */,
+				E495DDCD1B8CE23C00025CFF /* GraphViewController.swift in Sources */,
+				E495DDCB1B8CE23C00025CFF /* CalculatorViewController.swift in Sources */,
+				E495DDC41B8CE22C00025CFF /* AxesDrawer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
