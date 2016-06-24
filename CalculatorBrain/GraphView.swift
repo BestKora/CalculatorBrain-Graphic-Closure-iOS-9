@@ -8,18 +8,29 @@ import UIKit
 @IBDesignable
 class GraphView: UIView {
     
-    typealias yFunctionX = ( x: Double) -> Double?
-    var yForX: yFunctionX?
+  //  typealias yFunctionX = ( x: Double) -> Double?
+    var yForX: (( x: Double) -> Double?)?
     
     let axesDrawer = AxesDrawer(color: UIColor.blueColor())
     
-    private var graphCenter: CGPoint {
-        return convertPoint(center, fromView: superview)
-    }
+//    private var graphCenter: CGPoint {
+//        return convertPoint(center, fromView: superview)
+//    }
     
     @IBInspectable
     var scale: CGFloat = 50.0 { didSet { setNeedsDisplay() } }
-    var origin: CGPoint? { didSet { setNeedsDisplay() }}
+    
+    private var setOrigin: CGPoint? { didSet { setNeedsDisplay() } }
+    
+    var origin: CGPoint {
+        get {
+            return setOrigin ?? CGPoint(x: bounds.midX, y: bounds.midY)
+        }
+        set {
+            setOrigin = newValue
+        }
+    }
+
     @IBInspectable
     var lineWidth: CGFloat = 2.0 { didSet { setNeedsDisplay() } }
     @IBInspectable
@@ -27,10 +38,9 @@ class GraphView: UIView {
 
     
     override func drawRect(rect: CGRect) {
-        origin =  origin ?? graphCenter
         axesDrawer.contentScaleFactor = contentScaleFactor
-        axesDrawer.drawAxesInRect(bounds, origin: origin!, pointsPerUnit: scale)
-        drawCurveInRect(bounds, origin: origin!, pointsPerUnit: scale)
+        axesDrawer.drawAxesInRect(bounds, origin: origin, pointsPerUnit: scale)
+        drawCurveInRect(bounds, origin: origin, pointsPerUnit: scale)
     }
     
     func drawCurveInRect(bounds: CGRect, origin: CGPoint, pointsPerUnit: CGFloat){
@@ -40,7 +50,7 @@ class GraphView: UIView {
         var point = CGPoint()
         
         var firstValue = true
-        for var i = 0; i <= Int(bounds.size.width * contentScaleFactor); i++ {
+           for i in 0...Int(bounds.size.width * contentScaleFactor){
             point.x = CGFloat(i) / contentScaleFactor
             
             if let y = (self.yForX)?(x: Double ((point.x - origin.x) / scale)) {
@@ -76,8 +86,8 @@ class GraphView: UIView {
         case .Changed:
             let translation = gesture.translationInView(self)
             if translation != CGPointZero {
-                origin?.x += translation.x
-                origin?.y += translation.y
+                origin.x += translation.x
+                origin.y += translation.y
                 gesture.setTranslation(CGPointZero, inView: self)
             }
         default: break
