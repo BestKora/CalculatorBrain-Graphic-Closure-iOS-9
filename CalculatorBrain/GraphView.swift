@@ -7,16 +7,10 @@ import UIKit
 
 @IBDesignable
 class GraphView: UIView {
-    
-  //  typealias yFunctionX = ( x: Double) -> Double?
+
     var yForX: (( x: Double) -> Double?)?
-    
     let axesDrawer = AxesDrawer(color: UIColor.blueColor())
-    
-//    private var graphCenter: CGPoint {
-//        return convertPoint(center, fromView: superview)
-//    }
-    
+        
     @IBInspectable
     var scale: CGFloat = 50.0 { didSet { setNeedsDisplay() } }
     
