@@ -34,22 +34,27 @@ class GraphView: UIView {
     override func drawRect(rect: CGRect) {
         axesDrawer.contentScaleFactor = contentScaleFactor
         axesDrawer.drawAxesInRect(bounds, origin: origin, pointsPerUnit: scale)
-        drawCurveInRect(bounds, origin: origin, pointsPerUnit: scale)
+        drawCurveInRect(bounds, origin: origin, scale: scale)
     }
     
-    func drawCurveInRect(bounds: CGRect, origin: CGPoint, pointsPerUnit: CGFloat){
+    func drawCurveInRect(bounds: CGRect, origin: CGPoint, scale: CGFloat){
         color.set()
         let path = UIBezierPath()
         path.lineWidth = lineWidth
         var point = CGPoint()
+        
         var x: Double {return Double ((point.x - origin.x) / scale)}
+        
+        // ---Разрывные точки----
         var oldPoint = OldPoint (y: point.y, normal: false)
-        var disContinuity:Bool {return abs(point.y - oldPoint.y) >  max(bounds.width, bounds.height) * 1.5 }
+        var disContinuity:Bool {
+            return abs(point.y - oldPoint.y) > max(bounds.width, bounds.height) * 1.5}
+        //-----------------------
         
            for i in 0...Int(bounds.size.width * contentScaleFactor){
             point.x = CGFloat(i) / contentScaleFactor
             
-            if let y = (self.yForX)?(x: x) {
+            if let y = (yForX)?(x: x) {
                 if !y.isFinite {
                     oldPoint.normal = false
                     continue
@@ -77,7 +82,6 @@ class GraphView: UIView {
     private struct OldPoint {
         var y: CGFloat
         var normal: Bool
-       
     }
 
     func scale(gesture: UIPinchGestureRecognizer) {
